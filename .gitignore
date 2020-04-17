@@ -1,0 +1,7 @@
+easyfix.html
+index.html
+*~
+build/
+dist/
+MANIFEST
+*.pyc
