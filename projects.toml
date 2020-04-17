@@ -1,0 +1,8 @@
+[projects.pagure.releng]
+[projects.pagure.fedora-infrastructure]
+
+[projects.github.'fedora-infra/bodhi']
+[projects.github.'fedora-infra/noggin']
+
+[projects.bugzilla.fedora-repos]
+[projects.bugzilla.fedora-release]

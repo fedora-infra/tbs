@@ -1,0 +1,13 @@
+certifi
+chardet
+idna
+Jinja2
+MarkupSafe
+mwclient
+oauthlib
+python-bugzilla
+requests
+requests-oauthlib
+six
+toml
+urllib3
