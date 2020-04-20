@@ -234,38 +234,39 @@ def main():
                             tickets.append(ticketobj)
 
         elif project.service == "gitlab":
-            for label in labels:
-                project.tag = label
-                # https://docs.gitlab.com/ee/api/issues.html#list-project-issues
-                project.url = "https://gitlab.com/%s/" % (project.name)
-                project.site = "gitlab.com"
-                url = (
-                    "https://gitlab.com/api/v4/projects/%s/issues"
-                    "?state=opened&labels=%s"
-                    % (urllib2.quote(project.name, safe=""), label)
-                )
-                stream = urlopen(url)
-                output = stream.read()
-                jsonobj = json.loads(output)
-                if jsonobj:
-                    for ticket in jsonobj:
-                        ticket_num = ticket_num + 1
-                        ticketobj = Ticket()
-                        ticketobj.id = ticket["id"]
-                        ticketobj.title = ticket["title"]
-                        ticketobj.url = ticket["web_url"]
-                        ticketobj.status = ticket["state"]
-                        ticketobj.tag = label
-                        ticketobj.requester = ""
-                        ticketobj.project_url = project.url
-                        ticketobj.project = project.name
-                        ticketobj.project_site = project.site
-                        if ticket["assignee"]:
-                            ticketobj.assignee = ticket["assignee"]["name"]
-                        else:
-                            ticketobj.assignee = None
-                        tickets.append(ticketobj)
-                        all_tickets.append(ticketobj)
+            for state in states:
+                for label in labels:
+                    project.tag = label
+                    # https://docs.gitlab.com/ee/api/issues.html#list-project-issues
+                    project.url = "https://gitlab.com/%s/" % (project.name)
+                    project.site = "gitlab.com"
+                    url = (
+                        "https://gitlab.com/api/v4/projects/%s/issues"
+                        "?state=%s&labels=%s"
+                        % (urllib2.quote(project.name, safe=""), state, label)
+                    )
+                    stream = urlopen(url)
+                    output = stream.read()
+                    jsonobj = json.loads(output)
+                    if jsonobj:
+                        for ticket in jsonobj:
+                            ticket_num = ticket_num + 1
+                            ticketobj = Ticket()
+                            ticketobj.id = ticket["id"]
+                            ticketobj.title = ticket["title"]
+                            ticketobj.url = ticket["web_url"]
+                            ticketobj.status = ticket["state"]
+                            ticketobj.tag = label
+                            ticketobj.requester = ""
+                            ticketobj.project_url = project.url
+                            ticketobj.project = project.name
+                            ticketobj.project_site = project.site
+                            if ticket["assignee"]:
+                                ticketobj.assignee = ticket["assignee"]["name"]
+                            else:
+                                ticketobj.assignee = None
+                            tickets.append(ticketobj)
+                            all_tickets.append(ticketobj)
         elif project.service == "bugzilla":
             project.tag = "bugzillaTag"
             # https://docs.gitlab.com/ee/api/issues.html#list-project-issues
