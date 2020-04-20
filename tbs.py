@@ -146,43 +146,51 @@ def main():
     projects = gather_projects()
 
     labels = ['groomed', 'in-progress', '']
+    states = ['open', 'closed']
     ticket_num = 0
     all_tickets = []
+    closed_tickets = []
     for project in projects:
         # print('Project: %s' % project.name)
         tickets = []
         if project.service == 'github':
-            for label in labels:
-                project.tag = label
-                project.url = "https://github.com/%s/" % (project.name)
-                project.site = "github"
-                url = (
-                    "https://api.github.com/repos/%s/issues"
-                    "?labels=%s&state=open" % (project.name, label)
-                )
-                stream = urlopen(url)
-                output = stream.read()
-                jsonobj = json.loads(output)
-                if jsonobj:
-                    for ticket in jsonobj:
-                        ticket_num = ticket_num + 1
-                        ticketobj = Ticket()
-                        ticketobj.id = ticket["number"]
-                        ticketobj.title = ticket["title"]
-                        ticketobj.url = ticket["html_url"]
-                        ticketobj.status = ticket["state"]
-                        ticketobj.tag = label
-                        ticketobj.requester = ticket["user"]["login"]
-                        ticketobj.project_url = project.url
-                        ticketobj.project = project.name
-                        ticketobj.project_site = project.site
-                        if ticket["assignee"]:
-                            # GitHub api doesn't give full name of the user
-                            ticketobj.assignee = ticket["assignee"]["login"]
-                        else:
-                            ticketobj.assignee = None
-                        tickets.append(ticketobj)
-                        all_tickets.append(ticketobj)
+            for state in states:
+                for label in labels:
+                    project.tag = label
+                    project.url = "https://github.com/%s/" % (project.name)
+                    project.site = "github"
+                    url = (
+                        "https://api.github.com/repos/%s/issues"
+                        "?labels=%s&state=%s" % (project.name, label, state)
+                    )
+                    stream = urlopen(url)
+                    output = stream.read()
+                    jsonobj = json.loads(output)
+                    if jsonobj:
+                        for ticket in jsonobj:
+                            ticket_num = ticket_num + 1
+                            ticketobj = Ticket()
+                            ticketobj.id = ticket["number"]
+                            ticketobj.title = ticket["title"]
+                            ticketobj.url = ticket["html_url"]
+                            ticketobj.status = ticket["state"]
+                            ticketobj.tag = label
+                            ticketobj.requester = ticket["user"]["login"]
+                            ticketobj.project_url = project.url
+                            ticketobj.project = project.name
+                            ticketobj.project_site = project.site
+                            if ticket["assignee"]:
+                                # GitHub api doesn't give full name of the user
+                                ticketobj.assignee = ticket["assignee"]["login"]
+                            else:
+                                ticketobj.assignee = None
+                            tickets.append(ticketobj)
+                            
+                            if ticket["closed_at"]:
+                                closed_tickets.append(ticketobj)
+                            else:
+                                all_tickets.append(ticketobj)
+
         elif project.service == "pagure":
             for label in labels:
                 project.tag = label
@@ -253,7 +261,8 @@ def main():
         elif project.service == "bugzilla":
             project.tag = "bugzillaTag"
             # https://docs.gitlab.com/ee/api/issues.html#list-project-issues
-            project.url = "https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora" % (project.name)
+            project.url = "https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora" % (
+                project.name)
             project.site = "bugzilla.redhat.com"
             bz_list = bzclient.query(
                 {
@@ -271,7 +280,7 @@ def main():
                 ticketobj.url = "https://bugzilla.redhat.com/%s" % (
                     ticket.bug_id)
                 ticketobj.status = ticket.status
-                ticketobj.tag =  "in-progress" if ticket.bug_status == "ASSIGNED" else "" 
+                ticketobj.tag = "in-progress" if ticket.bug_status == "ASSIGNED" else ""
                 ticketobj.requester = ticket.creator
                 ticketobj.project_url = project.url
                 ticketobj.project = project.name
@@ -283,7 +292,7 @@ def main():
                 tickets.append(ticketobj)
                 all_tickets.append(ticketobj)
         project.tickets = tickets
-    
+
     tickets_groomed = []
     tickets_in_progress = []
     tickets_untaged = []
@@ -308,6 +317,7 @@ def main():
             tickets_groomed=tickets_groomed,
             tickets_in_progress=tickets_in_progress,
             tickets_untaged=tickets_untaged,
+            closed_tickets=closed_tickets,
             date=datetime.datetime.now().strftime("%a %b %d %Y %H:%M"),
             **extra_kwargs
         )
