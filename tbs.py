@@ -74,6 +74,7 @@ class Ticket(object):
         self.project_url = ""
         self.project = ""
         self.project_site = ""
+        self.closed_by = ""
 
 
 def gather_bugzilla_issues(bz_projects):
@@ -184,47 +185,54 @@ def main():
                                 ticketobj.assignee = ticket["assignee"]["login"]
                             else:
                                 ticketobj.assignee = None
-                            tickets.append(ticketobj)
-                            
+                                                        
                             if ticket["closed_at"]:
-                                closed_tickets.append(ticketobj)
+                               closed_tickets.append(ticketobj)
                             else:
-                                all_tickets.append(ticketobj)
+                               all_tickets.append(ticketobj)
 
+                            tickets.append(ticketobj)
         elif project.service == "pagure":
-            for label in labels:
-                project.tag = label
-                project.url = "https://pagure.io/%s/" % (project.name)
-                project.site = "pagure.io"
-                url = (
-                    "https://pagure.io/api/0/%s/issues"
-                    "?status=Open&tags=%s" % (project.name, label)
-                )
-                stream = urlopen(url)
-                output = stream.read()
-                jsonobj = json.loads(output)
-                if jsonobj:
-                    for ticket in jsonobj["issues"]:
-                        ticket_num = ticket_num + 1
-                        ticketobj = Ticket()
-                        ticketobj.id = ticket["id"]
-                        ticketobj.title = ticket["title"]
-                        ticketobj.url = "https://pagure.io/%s/issue/%s" % (
-                            project.name,
-                            ticket["id"],
-                        )
-                        ticketobj.status = ticket["status"]
-                        ticketobj.tag = label
-                        ticketobj.requester = ticket["user"]["name"]
-                        ticketobj.project_url = project.url
-                        ticketobj.project = project.name
-                        ticketobj.project_site = project.site
-                        if ticket["assignee"]:
-                            ticketobj.assignee = ticket["assignee"]["fullname"]
-                        else:
-                            ticketobj.assignee = None
-                        tickets.append(ticketobj)
-                        all_tickets.append(ticketobj)
+            for state in states:
+                for label in labels:
+                    project.tag = label
+                    project.url = "https://pagure.io/%s/" % (project.name)
+                    project.site = "pagure.io"
+                    url = (
+                        "https://pagure.io/api/0/%s/issues"
+                        "?status=%s&tags=%s" % (project.name, state.capitalize(), label)
+                    )
+                    stream = urlopen(url)
+                    output = stream.read()
+                    jsonobj = json.loads(output)
+                    if jsonobj:
+                        for ticket in jsonobj["issues"]:
+                            ticket_num = ticket_num + 1
+                            ticketobj = Ticket()
+                            ticketobj.id = ticket["id"]
+                            ticketobj.title = ticket["title"]
+                            ticketobj.url = "https://pagure.io/%s/issue/%s" % (
+                                project.name,
+                                ticket["id"],
+                            )
+                            ticketobj.status = ticket["status"]
+                            ticketobj.tag = label
+                            ticketobj.requester = ticket["user"]["name"]
+                            ticketobj.project_url = project.url
+                            ticketobj.project = project.name
+                            ticketobj.project_site = project.site
+                            if ticket["assignee"]:
+                                ticketobj.assignee = ticket["assignee"]["fullname"]
+                            else:
+                                ticketobj.assignee = None
+
+                            if ticket["closed_at"]:
+                               closed_tickets.append(ticketobj)
+                            else:
+                               all_tickets.append(ticketobj)
+
+                            tickets.append(ticketobj)
+
         elif project.service == "gitlab":
             for label in labels:
                 project.tag = label
