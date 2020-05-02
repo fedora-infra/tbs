@@ -33,33 +33,24 @@
                             <tr>
                                 <th>Ticket link</th>
                                 <th>Ticket info</th>
-                                <th>Project</th>
                                 <th>Assignee</th>
                                 <th>Requester</th>
-                                <th>Tag</th>
-                                
                             </tr>
                         </thead>
                     <tbody>
                 {% for ticket in all_tickets %}
                     <tr>
                         <td>
-                            <a href="{{ ticket.url|e }}"> {{ ticket.id }}</a>
+                            <a href="{{ ticket.url|e }}"> {{ticket.project_site}}/{{ ticket.project|e }}/{{ ticket.id }}</a>
                         </td>
                         <td>
                             {{ ticket.title|e }}
-                        </td>
-                        <td>
-                            <a href="{{ ticket.project_url|e }}">({{ticket.project_site}})/{{ ticket.project|e }}</a>
                         </td>
                         <td>
                             {{ ticket.assignee|e }}
                         </td>
                         <td>
                             {{ ticket.requester|e }}
-                        </td>
-                        <td>
-                            {{ ticket.tag|e }}
                         </td>
                     </tr>
                 {% endfor %}
@@ -73,33 +64,24 @@
                             <tr>
                                 <th>Ticket link</th>
                                 <th>Ticket info</th>
-                                <th>Project</th>
                                 <th>Assignee</th>
                                 <th>Requester</th>
-                                <th>Tag</th>
-                                
                             </tr>
                         </thead>
                     <tbody>
                 {% for ticket in tickets_in_progress %}
                     <tr>
                         <td>
-                            <a href="{{ ticket.url|e }}"> {{ ticket.id }}</a>
+                            <a href="{{ ticket.url|e }}"> {{ticket.project_site}}/{{ ticket.project|e }}/{{ ticket.id }}</a>
                         </td>
                         <td>
                             {{ ticket.title|e }}
-                        </td>
-                        <td>
-                            <a href="{{ ticket.project_url|e }}">({{ticket.project_site}})/{{ ticket.project|e }}</a>
                         </td>
                         <td>
                             {{ ticket.assignee|e }}
                         </td>
                         <td>
                             {{ ticket.requester|e }}
-                        </td>
-                        <td>
-                            {{ ticket.tag|e }}
                         </td>
                     </tr>
                 {% endfor %}
@@ -113,23 +95,18 @@
                             <tr>
                                 <th>Ticket link</th>
                                 <th>Ticket info</th>
-                                <th>Project</th>
                                 <th>Assignee</th>
                                 <th>Requester</th>
-                                
                             </tr>
                         </thead>
                     <tbody>
                 {% for ticket in tickets_groomed %}
                     <tr>
                         <td>
-                            <a href="{{ ticket.url|e }}"> {{ ticket.id }}</a>
+                            <a href="{{ ticket.url|e }}"> {{ticket.project_site}}/{{ ticket.project|e }}/{{ ticket.id }}</a>
                         </td>
                         <td>
                             {{ ticket.title|e }}
-                        </td>
-                        <td>
-                            <a href="{{ ticket.project_url|e }}">({{ticket.project_site}})/{{ ticket.project|e }}</a>
                         </td>
                         <td>
                             {{ ticket.assignee|e }}
@@ -137,7 +114,6 @@
                         <td>
                             {{ ticket.requester|e }}
                         </td>
-                     
                     </tr>
                 {% endfor %}
                     </tbody>
@@ -152,23 +128,18 @@
                             <tr>
                                 <th>Ticket link</th>
                                 <th>Ticket info</th>
-                                <th>Project</th>
                                 <th>Assignee</th>
                                 <th>Requester</th>
-                                
                             </tr>
                         </thead>
                     <tbody>
                 {% for ticket in closed_tickets %}
                     <tr>
                         <td>
-                            <a href="{{ ticket.url|e }}"> {{ ticket.id }}</a>
+                            <a href="{{ ticket.url|e }}"> {{ticket.project_site}}/{{ ticket.project|e }}/{{ ticket.id }}</a>
                         </td>
                         <td>
                             {{ ticket.title|e }}
-                        </td>
-                        <td>
-                            <a href="{{ ticket.project_url|e }}">({{ticket.project_site}})/{{ ticket.project|e }}</a>
                         </td>
                         <td>
                             {{ ticket.assignee|e }}
@@ -176,17 +147,13 @@
                         <td>
                             {{ ticket.requester|e }}
                         </td>
-                     
                     </tr>
                 {% endfor %}
                     </tbody>
                     </table>
                 </div>
-               
-                
         </div>
     </div>
-    
 </div>
 </body>
 </html>
