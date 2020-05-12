@@ -15,7 +15,6 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import argparse
 import datetime
 import logging
 import os
@@ -47,7 +46,6 @@ class Project:
         self.service = ""
         self.url = ""
         self.site = ""
-        self.owner = ""
         self.tag = ""
         self.tickets = []
 
@@ -59,9 +57,6 @@ class Ticket:
         self.id = ""
         self.url = ""
         self.title = ""
-        self.status = ""
-        self.type = ""
-        self.component = ""
         self.labels = []
         self.assingee = ""
         self.requester = ""
@@ -70,24 +65,6 @@ class Ticket:
         self.project_site = ""
         self.closed_by = ""
         self.tag = ""
-
-
-def gather_bugzilla_issues(bz_projects):
-    """ From the Red Hat bugzilla, retrieve all new tickets with keyword
-    """
-    full_bz_issues = []
-    for bz_project in bz_projects:
-        bz_issues = bzclient.query(
-            {
-                "query_format": "advanced",
-                "bug_status": ["NEW", "ASSIGNED"],
-                "classification": "Fedora",
-                "product": "Fedora",
-                "component": bz_project.name
-            }
-        )
-        full_bz_issues += bz_issues
-    return full_bz_issues
 
 
 def gather_projects(bz_service=False):
@@ -108,33 +85,13 @@ def gather_projects(bz_service=False):
     return projects
 
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument(
-        "--fedmenu-url", help="URL of the fedmenu resources (optional)"
-    )
-    parser.add_argument(
-        "--fedmenu-data-url", help="URL of the fedmenu data source (optional)"
-    )
-    args = parser.parse_args()
-    result = {}
-    for key in ["fedmenu_url", "fedmenu_data_url"]:
-        if getattr(args, key):
-            result[key] = getattr(args, key)
-    return result
-
-
 def main():
     """ For each projects which have suscribed in the correct place
     (fedoraproject wiki page), gather all the tickets containing the
     provided keyword.
     """
 
-    extra_kwargs = parse_arguments()
-
-    template = "/etc/tbs/template.html"
-    if not os.path.exists(template):
-        template = "./template.html"
+    template = "./template.html"
     if not os.path.exists(template):
         print("No template found")
         return 1
@@ -163,7 +120,6 @@ def main():
                     ticketobj.id = ticket["number"]
                     ticketobj.title = ticket["title"]
                     ticketobj.url = ticket["html_url"]
-                    ticketobj.status = ticket["state"]
                     ticketobj.requester = ticket["user"]["login"]
                     ticketobj.project_url = project.url
                     ticketobj.project = project.name
@@ -200,7 +156,6 @@ def main():
                         project.name,
                         ticket["id"],
                     )
-                    ticketobj.status = ticket["status"]
                     ticketobj.labels = ticket["tags"]
                     ticketobj.requester = ticket["user"]["name"]
                     ticketobj.project_url = project.url
@@ -235,8 +190,7 @@ def main():
                     ticketobj.id = ticket["id"]
                     ticketobj.title = ticket["title"]
                     ticketobj.url = ticket["web_url"]
-                    ticketobj.status = ticket["state"]
-                    ticketobj.tag = label
+                    ticketobj.labels = label
                     ticketobj.requester = ""
                     ticketobj.project_url = project.url
                     ticketobj.project = project.name
@@ -268,8 +222,7 @@ def main():
                 ticketobj.title = ticket.short_desc
                 ticketobj.url = "https://bugzilla.redhat.com/%s" % (
                     ticket.bug_id)
-                ticketobj.status = ticket.status
-                ticketobj.labels.append("in-progress" if ticket.bug_status == "ASSIGNED" else "")
+                ticketobj.labels = []
                 ticketobj.requester = ticket.creator
                 ticketobj.project_url = project.url
                 ticketobj.project = project.name
@@ -311,7 +264,6 @@ def main():
             tickets_untaged=tickets_untaged,
             closed_tickets=closed_tickets,
             date=datetime.datetime.now().strftime("%a %b %d %Y %H:%M"),
-            **extra_kwargs
         )
         # Write down the page
         stream = open("index.html", "w")
