@@ -1,8 +1,21 @@
 [projects.pagure.releng]
 [projects.pagure.fedora-infrastructure]
+[projects.pagure.koji-fedmsg-plugin]
+[projects.pagure.pungi-fedora]
+[projects.pagure.fedora-comps]
+[projects.pagure.fedscm-admin]
+[projects.pagure.mdapi]
+[projects.pagure.pagure-dist-git]
+[projects.pagure.robosignatory]
+
 
 [projects.github.'fedora-infra/bodhi']
 [projects.github.'fedora-infra/noggin']
+[projects.github.'fedora-infra/anitya']
+[projects.github.'fedora-infra/the-new-hotness']
+[projects.github.'fedora-infra/fedora-messaging']
+[projects.github.'fedora-infra/fedmsg-migration-tools']
+
 
 [projects.bugzilla.fedora-repos]
 [projects.bugzilla.fedora-release]
