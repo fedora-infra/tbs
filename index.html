@@ -7,26 +7,325 @@
   <title>CPE Issues Dashboard</title>
 </head>
 <body>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
-          
   <div class="fluid-container">
     <div>
         <h1>CPE Dashboard</h1>
-        <p> Total: 111 tickets found </p>
-        <p>Last update: Tue May 12 2020 19:13</p>        
+        <p> Total: 326 tickets found </p>
+        <p>Last update: Tue May 12 2020 20:28</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#planning">Planning</a></li>
-            <li><a data-toggle="tab" href="#done">Closed tickets</a></li>            
+            <li><a data-toggle="tab" href="#done">Closed tickets</a></li>
         </ul>
     </div>
         <div class="clear"></div>
         <div class="tab-content">
         <div id="planning" class="row tab-pane fade in active">
-            <div class="col-xs-6">
+            <div id="in_progress_tickets_table" class="col-xs-12">
+                <p><h4>In-progress tickets</h4></p>
+                <table class="table table-striped table-bordered table-centered">
+                    <thead>
+                        <tr>
+                            <th>Ticket link</th>
+                            <th>Ticket info</th>
+                            <th>Assignee</th>
+                            <th>Requester</th>
+                        </tr>
+                    </thead>
+                <tbody>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/releng/issue/9435"> pagure.io/releng/9435</a>
+                    </td>
+                    <td>
+                        Containers builds fail without a known reason quite often
+                    </td>
+                    <td>
+                        Clement Verna
+                    </td>
+                    <td>
+                        hhorak
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8908"> pagure.io/fedora-infrastructure/8908</a>
+                    </td>
+                    <td>
+                        sync of ansible.git from pagure.io to batcave doesn&#39;t always work
+                    </td>
+                    <td>
+                        Pierre-YvesChibon
+                    </td>
+                    <td>
+                        praiskup
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8896"> pagure.io/fedora-infrastructure/8896</a>
+                    </td>
+                    <td>
+                        Cannot build packages in staging: Error downloading packages
+                    </td>
+                    <td>
+                        Pierre-YvesChibon
+                    </td>
+                    <td>
+                        churchyard
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/pungi-fedora/issue/426"> pagure.io/pungi-fedora/426</a>
+                    </td>
+                    <td>
+                        Convert file sync from one-liner to durable shell script
+                    </td>
+                    <td>
+                        Kellin
+                    </td>
+                    <td>
+                        kellin
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/pungi-fedora/issue/173"> pagure.io/pungi-fedora/173</a>
+                    </td>
+                    <td>
+                        Fedora-Atomic in fedora.conf, fedora-atomic.conf and fedora-cloud.conf
+                    </td>
+                    <td>
+                        Kellin
+                    </td>
+                    <td>
+                        walters
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-comps/issue/205"> pagure.io/fedora-comps/205</a>
+                    </td>
+                    <td>
+                        @kde-software-development is outdated (stuck at KDE 4)
+                    </td>
+                    <td>
+                        Rex Dieter
+                    </td>
+                    <td>
+                        kkofler
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-comps/issue/204"> pagure.io/fedora-comps/204</a>
+                    </td>
+                    <td>
+                        @kde-* groups should distinguish mandatory/default/optional packages
+                    </td>
+                    <td>
+                        Rex Dieter
+                    </td>
+                    <td>
+                        kkofler
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/pagure-dist-git/issue/94"> pagure.io/pagure-dist-git/94</a>
+                    </td>
+                    <td>
+                        Update package descriptions with their summaries.
+                    </td>
+                    <td>
+                        Pierre-YvesChibon
+                    </td>
+                    <td>
+                        cverna
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://github.com/fedora-infra/bodhi/issues/4018"> github/fedora-infra/bodhi/4018</a>
+                    </td>
+                    <td>
+                        Add a graphql endpoint to bodhi
+                    </td>
+                    <td>
+                        karmadolkar
+                    </td>
+                    <td>
+                        cverna
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://github.com/fedora-infra/noggin/pull/272"> github/fedora-infra/noggin/272</a>
+                    </td>
+                    <td>
+                        Client Migration
+                    </td>
+                    <td>
+                        james02135
+                    </td>
+                    <td>
+                        james02135
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/4"> github/fedora-infra/fedmsg-migration-tools/4</a>
+                    </td>
+                    <td>
+                        RPM packaging
+                    </td>
+                    <td>
+                        abompard
+                    </td>
+                    <td>
+                        abompard
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://bugzilla.redhat.com/1697536"> bugzilla.redhat.com/fedora-repos/1697536</a>
+                    </td>
+                    <td>
+                        fedora-gpg-keys cannot be upgraded without fedora-repos{,rawhide}
+                    </td>
+                    <td>
+                        Mohan Boddu
+                    </td>
+                    <td>
+                        Petr Menšík
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://bugzilla.redhat.com/1817491"> bugzilla.redhat.com/fedora-release/1817491</a>
+                    </td>
+                    <td>
+                        enable mdadm&#39;s services by default in 90-default.preset
+                    </td>
+                    <td>
+                        Mohan Boddu
+                    </td>
+                    <td>
+                        XiaoNi
+                    </td>
+                </tr>
+            
+                </tbody>
+                </table>
+            </div>
+            <div id="groomed_tickets_table" class="col-xs-12">
+                <p><h4>Groomed tickets</h4></p>
+                <table class="table table-striped table-bordered table-centered">
+                    <thead>
+                        <tr>
+                            <th>Ticket link</th>
+                            <th>Ticket info</th>
+                            <th>Assignee</th>
+                            <th>Requester</th>
+                        </tr>
+                    </thead>
+                <tbody>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/releng/issue/9450"> pagure.io/releng/9450</a>
+                    </td>
+                    <td>
+                        EPEL 8 Modular repo certificate
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        bcotton
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8905"> pagure.io/fedora-infrastructure/8905</a>
+                    </td>
+                    <td>
+                        Globally ban `elitetorrent1.com`
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        ankursinha
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8903"> pagure.io/fedora-infrastructure/8903</a>
+                    </td>
+                    <td>
+                        AWS: additional permission requirements for Testing Farm
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        mvadkert
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8899"> pagure.io/fedora-infrastructure/8899</a>
+                    </td>
+                    <td>
+                        investigate registry traffic / usage
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        kevin
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://github.com/fedora-infra/bodhi/issues/3993"> github/fedora-infra/bodhi/3993</a>
+                    </td>
+                    <td>
+                        Bad characters in username
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        mattiaverga
+                    </td>
+                </tr>
+            
+                </tbody>
+                </table>
+            </div>
+            <div id="all_tickets_table" class="col-xs-12">
                 <p><h4>All tickets</h4></p>
                     <table class="table table-striped table-bordered table-centered">
                         <thead>
@@ -116,21 +415,6 @@
                 
                     <tr>
                         <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8907"> pagure.io/fedora-infrastructure/8907</a>
-                        </td>
-                        <td>
-                            Update OSBS buildroot with flatpak-module-tools-0.11.3-3
-                        </td>
-                        <td>
-                            Clement Verna
-                        </td>
-                        <td>
-                            kalev
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
                             <a href="https://pagure.io/fedora-infrastructure/issue/8906"> pagure.io/fedora-infrastructure/8906</a>
                         </td>
                         <td>
@@ -201,6 +485,801 @@
                         </td>
                         <td>
                             churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/koji-fedmsg-plugin/issue/14"> pagure.io/koji-fedmsg-plugin/14</a>
+                        </td>
+                        <td>
+                            Publish a message when the srpm is created
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/koji-fedmsg-plugin/issue/11"> pagure.io/koji-fedmsg-plugin/11</a>
+                        </td>
+                        <td>
+                            Add fedora-messaging schema
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/koji-fedmsg-plugin/issue/10"> pagure.io/koji-fedmsg-plugin/10</a>
+                        </td>
+                        <td>
+                            Add unit tests
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/811"> pagure.io/pungi-fedora/811</a>
+                        </td>
+                        <td>
+                            No &#39;mangohud&#39; in multilib
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            atim
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/759"> pagure.io/pungi-fedora/759</a>
+                        </td>
+                        <td>
+                            Use of `dracut*` in `additional_packages` pulls in some unneccessary stuff
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            adamwill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/738"> pagure.io/pungi-fedora/738</a>
+                        </td>
+                        <td>
+                            Replace build_composeinfo with compose-create-legacy-composeinfo
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            martstyk
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/533"> pagure.io/pungi-fedora/533</a>
+                        </td>
+                        <td>
+                            Python-Classroom should be called Python_Classroom
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            adamwill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/501"> pagure.io/pungi-fedora/501</a>
+                        </td>
+                        <td>
+                            Mark compiler-rt as multilib
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            tstellar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/486"> pagure.io/pungi-fedora/486</a>
+                        </td>
+                        <td>
+                            The compose scripts are a screaming ball of crazy
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            adamwill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/426"> pagure.io/pungi-fedora/426</a>
+                        </td>
+                        <td>
+                            Convert file sync from one-liner to durable shell script
+                        </td>
+                        <td>
+                            Kellin
+                        </td>
+                        <td>
+                            kellin
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/173"> pagure.io/pungi-fedora/173</a>
+                        </td>
+                        <td>
+                            Fedora-Atomic in fedora.conf, fedora-atomic.conf and fedora-cloud.conf
+                        </td>
+                        <td>
+                            Kellin
+                        </td>
+                        <td>
+                            walters
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/492"> pagure.io/fedora-comps/492</a>
+                        </td>
+                        <td>
+                            Games group &#34;empty&#34; and unmaintained
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            keesdejong
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/461"> pagure.io/fedora-comps/461</a>
+                        </td>
+                        <td>
+                            [EPEL7] Cinnamon Desktop lacks necessary XOrg requirements
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mroche
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/448"> pagure.io/fedora-comps/448</a>
+                        </td>
+                        <td>
+                            Group &#34;base-x&#34; is missing xorg-x11-drv-amdgpu
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            woi
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/447"> pagure.io/fedora-comps/447</a>
+                        </td>
+                        <td>
+                            Drop MongoDB?
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/445"> pagure.io/fedora-comps/445</a>
+                        </td>
+                        <td>
+                            Can&#39;t install MATE desktop environment
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            atim
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/425"> pagure.io/fedora-comps/425</a>
+                        </td>
+                        <td>
+                            Group &#39;Development and Creative Workstation&#39; broken since several packages have been removed
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            emaldonado
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/419"> pagure.io/fedora-comps/419</a>
+                        </td>
+                        <td>
+                            group &#39;Development and Creative Workstation&#39; broken since crypto-utils has been removed
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            emaldonado
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/357"> pagure.io/fedora-comps/357</a>
+                        </td>
+                        <td>
+                            Missing GL packages in workstation part
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            alexl
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/205"> pagure.io/fedora-comps/205</a>
+                        </td>
+                        <td>
+                            @kde-software-development is outdated (stuck at KDE 4)
+                        </td>
+                        <td>
+                            Rex Dieter
+                        </td>
+                        <td>
+                            kkofler
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/204"> pagure.io/fedora-comps/204</a>
+                        </td>
+                        <td>
+                            @kde-* groups should distinguish mandatory/default/optional packages
+                        </td>
+                        <td>
+                            Rex Dieter
+                        </td>
+                        <td>
+                            kkofler
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/28"> pagure.io/fedscm-admin/28</a>
+                        </td>
+                        <td>
+                            master branch is always created in PDC for new packages but not in pagure
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            till
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/27"> pagure.io/fedscm-admin/27</a>
+                        </td>
+                        <td>
+                            Better handling of new repo requests
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mohanboddu
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/26"> pagure.io/fedscm-admin/26</a>
+                        </td>
+                        <td>
+                            Enable the git hook preventing new branch from being creating when creating a project
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/25"> pagure.io/fedscm-admin/25</a>
+                        </td>
+                        <td>
+                            The git command &#34;git rev-list --max-parents=0 master&#34; failed
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ignatenkobrain
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/23"> pagure.io/fedscm-admin/23</a>
+                        </td>
+                        <td>
+                            Do not try to regenerate Gitolite ACLs
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mizdebsk
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/22"> pagure.io/fedscm-admin/22</a>
+                        </td>
+                        <td>
+                            Creating components in the tests/ namespace not working
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            hhorak
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/19"> pagure.io/fedscm-admin/19</a>
+                        </td>
+                        <td>
+                            Improve user-feedback on failure to create the git branches
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/7"> pagure.io/fedscm-admin/7</a>
+                        </td>
+                        <td>
+                            BZ email id is different from fas email id
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mohanboddu
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/5"> pagure.io/fedscm-admin/5</a>
+                        </td>
+                        <td>
+                            RFE: when creating new module dist-git which matches an existing rpm, default to acls for that rpm
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            lsedlar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/2"> pagure.io/fedscm-admin/2</a>
+                        </td>
+                        <td>
+                            Use cached git repo instead of cloning new one
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ignatenkobrain
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedscm-admin/issue/1"> pagure.io/fedscm-admin/1</a>
+                        </td>
+                        <td>
+                            RFE: Do not create initial commit if the json indicates that
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/111"> pagure.io/mdapi/111</a>
+                        </td>
+                        <td>
+                            Always return JSON?
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            qulogic
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/101"> pagure.io/mdapi/101</a>
+                        </td>
+                        <td>
+                            Why is virtualenvwrapper needed?
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            qulogic
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/89"> pagure.io/mdapi/89</a>
+                        </td>
+                        <td>
+                            Wrong mimetype on 404 error
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jlanda
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/72"> pagure.io/mdapi/72</a>
+                        </td>
+                        <td>
+                            handle modular repos
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kevin
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/70"> pagure.io/mdapi/70</a>
+                        </td>
+                        <td>
+                            Package info missing for &#34;fmf&#34;
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            psss
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/69"> pagure.io/mdapi/69</a>
+                        </td>
+                        <td>
+                            RFE: Add &#34;latest&#34; distro branch
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            scop
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/52"> pagure.io/mdapi/52</a>
+                        </td>
+                        <td>
+                            Add support for multiple arches
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            till
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/51"> pagure.io/mdapi/51</a>
+                        </td>
+                        <td>
+                            Add support for pkgdb2 removal
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            till
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/106"> pagure.io/pagure-dist-git/106</a>
+                        </td>
+                        <td>
+                            Inconsistency between web and clone URLs for forks
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            omos
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/104"> pagure.io/pagure-dist-git/104</a>
+                        </td>
+                        <td>
+                            Link users/groups in bugzilla overrides
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/96"> pagure.io/pagure-dist-git/96</a>
+                        </td>
+                        <td>
+                            Make it explicit that commit keyword hook is disable in dist-git
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/94"> pagure.io/pagure-dist-git/94</a>
+                        </td>
+                        <td>
+                            Update package descriptions with their summaries.
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/93"> pagure.io/pagure-dist-git/93</a>
+                        </td>
+                        <td>
+                            Search packages by monitoring status
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            qulogic
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/81"> pagure.io/pagure-dist-git/81</a>
+                        </td>
+                        <td>
+                            add help text about adding new user accounts
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ktdreyer
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/73"> pagure.io/pagure-dist-git/73</a>
+                        </td>
+                        <td>
+                            RFE: Automatically close PRs against EOL branches
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ignatenkobrain
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/44"> pagure.io/robosignatory/44</a>
+                        </td>
+                        <td>
+                            backout commitmeta on ref update failure
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kevin
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/40"> pagure.io/robosignatory/40</a>
+                        </td>
+                        <td>
+                            Should gracefully handle S3 errors when processing CoreOS signing requests
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jlebon
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/23"> pagure.io/robosignatory/23</a>
+                        </td>
+                        <td>
+                            robosignatory signs filtered RPMs from modules 
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ignatenkobrain
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/22"> pagure.io/robosignatory/22</a>
+                        </td>
+                        <td>
+                            Allow for signing containers
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kevin
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/14"> pagure.io/robosignatory/14</a>
+                        </td>
+                        <td>
+                            Add capability to sign repomd.xml
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            puiterwijk
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/3"> pagure.io/robosignatory/3</a>
+                        </td>
+                        <td>
+                            Expose information about current jobs being handled.
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ralph
                         </td>
                     </tr>
                 
@@ -536,6 +1615,396 @@
                 
                     <tr>
                         <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/910"> github/fedora-infra/anitya/910</a>
+                        </td>
+                        <td>
+                            Add release guide for messaging schema
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/907"> github/fedora-infra/anitya/907</a>
+                        </td>
+                        <td>
+                            CGI-Simple update tracking failing.
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kentfredric
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/901"> github/fedora-infra/anitya/901</a>
+                        </td>
+                        <td>
+                            repology integration
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            glensc
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/899"> github/fedora-infra/anitya/899</a>
+                        </td>
+                        <td>
+                            Add ability for admins to remove GitHub cursor
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/898"> github/fedora-infra/anitya/898</a>
+                        </td>
+                        <td>
+                            Add filter field for versions
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/894"> github/fedora-infra/anitya/894</a>
+                        </td>
+                        <td>
+                            Remove current alembic migrations
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/893"> github/fedora-infra/anitya/893</a>
+                        </td>
+                        <td>
+                            [Feature Request] Please add &#34;Sign in with Google&#34; account option
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Donboscow
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/891"> github/fedora-infra/anitya/891</a>
+                        </td>
+                        <td>
+                            Project mappings for specific version ranges
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            QuLogic
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/889"> github/fedora-infra/anitya/889</a>
+                        </td>
+                        <td>
+                            Anitya is matching tag names that do not start with the configured prefix
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            bowlofeggs
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/888"> github/fedora-infra/anitya/888</a>
+                        </td>
+                        <td>
+                            Postpone check of projects with blacklisted backend till there is no project in rate limit queue
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/885"> github/fedora-infra/anitya/885</a>
+                        </td>
+                        <td>
+                            Rewrite projects pages
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/291"> github/fedora-infra/the-new-hotness/291</a>
+                        </td>
+                        <td>
+                            Change links to update policy
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            blowry-fedora
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/290"> github/fedora-infra/the-new-hotness/290</a>
+                        </td>
+                        <td>
+                            Fix crash on empty config section
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/289"> github/fedora-infra/the-new-hotness/289</a>
+                        </td>
+                        <td>
+                            Use anitya schema for fedora messaging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/288"> github/fedora-infra/the-new-hotness/288</a>
+                        </td>
+                        <td>
+                            Add towncrier
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/286"> github/fedora-infra/the-new-hotness/286</a>
+                        </td>
+                        <td>
+                            Add SHA512 values to error message about same sources
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/284"> github/fedora-infra/the-new-hotness/284</a>
+                        </td>
+                        <td>
+                            It&#39;s likely this package does not use the version macro in its Source URLs -&gt; no scratch build
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dwrobel
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/277"> github/fedora-infra/the-new-hotness/277</a>
+                        </td>
+                        <td>
+                            Configure jenkins to use custom node instead of standard tox node
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/276"> github/fedora-infra/the-new-hotness/276</a>
+                        </td>
+                        <td>
+                            Refactor the-new-hotness using CA design
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/269"> github/fedora-infra/the-new-hotness/269</a>
+                        </td>
+                        <td>
+                            Crash on proxy error
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/206"> github/fedora-infra/fedora-messaging/206</a>
+                        </td>
+                        <td>
+                            Raise exception on permission-related rejection
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dvejmz
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/203"> github/fedora-infra/fedora-messaging/203</a>
+                        </td>
+                        <td>
+                            Publishes that fail due to permissions result in a TimeoutError
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/195"> github/fedora-infra/fedora-messaging/195</a>
+                        </td>
+                        <td>
+                            change the name so it doesn&#39;t contain &#39;fedora-&#39; prefix
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            praiskup
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/190"> github/fedora-infra/fedora-messaging/190</a>
+                        </td>
+                        <td>
+                            Understanding how to connect to the public Fedora broker from outside using library
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            changlinli
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/14"> github/fedora-infra/fedmsg-migration-tools/14</a>
+                        </td>
+                        <td>
+                            Offer alternative ways of reporting missing bus messages
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/4"> github/fedora-infra/fedmsg-migration-tools/4</a>
+                        </td>
+                        <td>
+                            RPM packaging
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
                             <a href="https://bugzilla.redhat.com/1697536"> bugzilla.redhat.com/fedora-repos/1697536</a>
                         </td>
                         <td>
@@ -567,161 +2036,9 @@
                     </tbody>
                     </table>
             </div>
-            <div id="in_progress_tickets_table" class="col-xs-6">
-                    <p><h4>In-progress tickets</h4></p>
-                    <table class="table table-striped table-bordered table-centered">
-                        <thead>
-                            <tr>
-                                <th>Ticket link</th>
-                                <th>Ticket info</th>
-                                <th>Assignee</th>
-                                <th>Requester</th>
-                            </tr>
-                        </thead>
-                    <tbody>
-                
-                    <tr>
-                        <td>
-                            <a href="https://bugzilla.redhat.com/1697536"> bugzilla.redhat.com/fedora-repos/1697536</a>
-                        </td>
-                        <td>
-                            fedora-gpg-keys cannot be upgraded without fedora-repos{,rawhide}
-                        </td>
-                        <td>
-                            Mohan Boddu
-                        </td>
-                        <td>
-                            Petr Menšík
-                        </td>
-                    </tr>
-                
-                    </tbody>
-                    </table>
-                </div>
-                <div id="groomed_tickets_table" class="col-xs-6">
-                    <p><h4>Groomed tickets</h4></p>
-                    <table class="table table-striped table-bordered table-centered">
-                        <thead>
-                            <tr>
-                                <th>Ticket link</th>
-                                <th>Ticket info</th>
-                                <th>Assignee</th>
-                                <th>Requester</th>
-                            </tr>
-                        </thead>
-                    <tbody>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/releng/issue/9450"> pagure.io/releng/9450</a>
-                        </td>
-                        <td>
-                            EPEL 8 Modular repo certificate
-                        </td>
-                        <td>
-                            None
-                        </td>
-                        <td>
-                            bcotton
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8907"> pagure.io/fedora-infrastructure/8907</a>
-                        </td>
-                        <td>
-                            Update OSBS buildroot with flatpak-module-tools-0.11.3-3
-                        </td>
-                        <td>
-                            Clement Verna
-                        </td>
-                        <td>
-                            kalev
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8905"> pagure.io/fedora-infrastructure/8905</a>
-                        </td>
-                        <td>
-                            Globally ban `elitetorrent1.com`
-                        </td>
-                        <td>
-                            None
-                        </td>
-                        <td>
-                            ankursinha
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8903"> pagure.io/fedora-infrastructure/8903</a>
-                        </td>
-                        <td>
-                            AWS: additional permission requirements for Testing Farm
-                        </td>
-                        <td>
-                            None
-                        </td>
-                        <td>
-                            mvadkert
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8899"> pagure.io/fedora-infrastructure/8899</a>
-                        </td>
-                        <td>
-                            investigate registry traffic / usage
-                        </td>
-                        <td>
-                            None
-                        </td>
-                        <td>
-                            kevin
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://pagure.io/fedora-infrastructure/issue/8896"> pagure.io/fedora-infrastructure/8896</a>
-                        </td>
-                        <td>
-                            Cannot build packages in staging: Error downloading packages
-                        </td>
-                        <td>
-                            Pierre-YvesChibon
-                        </td>
-                        <td>
-                            churchyard
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td>
-                            <a href="https://github.com/fedora-infra/bodhi/issues/3993"> github/fedora-infra/bodhi/3993</a>
-                        </td>
-                        <td>
-                            Bad characters in username
-                        </td>
-                        <td>
-                            None
-                        </td>
-                        <td>
-                            mattiaverga
-                        </td>
-                    </tr>
-                
-                    </tbody>
-                    </table>
-                </div>
         </div>
         <div id="done" class="row tab-pane fade">
-                <div id="closed_tickets_table" class="col-xs-6">
+                <div id="closed_tickets_table" class="col-xs-12">
                     <p><h4>Closed tickets</h4></p>
                     <table class="table table-striped table-bordered table-centered">
                         <thead>
@@ -1006,6 +2323,21 @@
                 
                     <tr>
                         <td>
+                            <a href="https://pagure.io/fedora-infrastructure/issue/8907"> pagure.io/fedora-infrastructure/8907</a>
+                        </td>
+                        <td>
+                            Update OSBS buildroot with flatpak-module-tools-0.11.3-3
+                        </td>
+                        <td>
+                            Clement Verna
+                        </td>
+                        <td>
+                            kalev
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
                             <a href="https://pagure.io/fedora-infrastructure/issue/8904"> pagure.io/fedora-infrastructure/8904</a>
                         </td>
                         <td>
@@ -1166,6 +2498,756 @@
                         </td>
                         <td>
                             lrossett
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/800"> pagure.io/pungi-fedora/800</a>
+                        </td>
+                        <td>
+                            rawhide missing .composeinfo file
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mboswell
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/740"> pagure.io/pungi-fedora/740</a>
+                        </td>
+                        <td>
+                            composeinfo file in Fedora Rawhid
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mboswell
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/679"> pagure.io/pungi-fedora/679</a>
+                        </td>
+                        <td>
+                            zchunk metadata is missing zdicts
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jdieter
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/531"> pagure.io/pungi-fedora/531</a>
+                        </td>
+                        <td>
+                            apitrace-libs.i686 version mismatches apitrace-libs.x86_64 on F27
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            smani
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/500"> pagure.io/pungi-fedora/500</a>
+                        </td>
+                        <td>
+                            Mark compiler-rt as multilib
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            tstellar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/493"> pagure.io/pungi-fedora/493</a>
+                        </td>
+                        <td>
+                            Adding mariadb-connector-odbc to multilib
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mschorm
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/489"> pagure.io/pungi-fedora/489</a>
+                        </td>
+                        <td>
+                            fedora-docker.conf in f27 branch has version 26
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            lsedlar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/390"> pagure.io/pungi-fedora/390</a>
+                        </td>
+                        <td>
+                            Update variants-modular.xml to add modules to the compose
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            langdon
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/370"> pagure.io/pungi-fedora/370</a>
+                        </td>
+                        <td>
+                            Fedora 27 Modular Apps
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            langdon
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/350"> pagure.io/pungi-fedora/350</a>
+                        </td>
+                        <td>
+                             Incorrect text in the broken dependencies email for f27
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            vondruch
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/214"> pagure.io/pungi-fedora/214</a>
+                        </td>
+                        <td>
+                            Missing glibc-langpacks in rawhide compose?
+                        </td>
+                        <td>
+                            Kellin
+                        </td>
+                        <td>
+                            lsedlar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pungi-fedora/issue/208"> pagure.io/pungi-fedora/208</a>
+                        </td>
+                        <td>
+                            Signing keys differ in rawhide for cloud, docker, atomic
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kevin
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/442"> pagure.io/fedora-comps/442</a>
+                        </td>
+                        <td>
+                            please migrate to the new Fedora translation platform
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jibecfed
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/437"> pagure.io/fedora-comps/437</a>
+                        </td>
+                        <td>
+                            MATE group contains exaile, which cannot be installed
+                        </td>
+                        <td>
+                            Wolfgang Ulbrich
+                        </td>
+                        <td>
+                            adamwill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/325"> pagure.io/fedora-comps/325</a>
+                        </td>
+                        <td>
+                            XFCE yum group requirements are not correct
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            guymatz
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/302"> pagure.io/fedora-comps/302</a>
+                        </td>
+                        <td>
+                            Please, remove coolkey from Fedora 29+ composes
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jjelen
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/291"> pagure.io/fedora-comps/291</a>
+                        </td>
+                        <td>
+                            Change as much as possible to Python 3
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/290"> pagure.io/fedora-comps/290</a>
+                        </td>
+                        <td>
+                            ansible-node has Python 2 deps
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/247"> pagure.io/fedora-comps/247</a>
+                        </td>
+                        <td>
+                            tcp_wrappers should not be in default composes for Fedora 28+
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jjelen
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/226"> pagure.io/fedora-comps/226</a>
+                        </td>
+                        <td>
+                            urw-fonts package is now retired
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dkaspar
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/206"> pagure.io/fedora-comps/206</a>
+                        </td>
+                        <td>
+                            libreoffice-kde was renamed to libreoffice-kde4
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kkofler
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/fedora-comps/issue/185"> pagure.io/fedora-comps/185</a>
+                        </td>
+                        <td>
+                            python-lib389 retired - need to update comps
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mreynolds
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/96"> pagure.io/mdapi/96</a>
+                        </td>
+                        <td>
+                            /{branch}/srcpkg/{name} returns incorrect data
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            jlanda
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/94"> pagure.io/mdapi/94</a>
+                        </td>
+                        <td>
+                             mdapi results not up to date
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/85"> pagure.io/mdapi/85</a>
+                        </td>
+                        <td>
+                            New type of lock file introduced in commit 2e5b04d is breaking performances
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            cverna
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/81"> pagure.io/mdapi/81</a>
+                        </td>
+                        <td>
+                            RFE: &#34;current&#34; branch
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            scop
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/79"> pagure.io/mdapi/79</a>
+                        </td>
+                        <td>
+                            Lots of packages missing in mdapi
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            swt2c
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/66"> pagure.io/mdapi/66</a>
+                        </td>
+                        <td>
+                            AJAX calls to MDAPI fail
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            mprahl
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/64"> pagure.io/mdapi/64</a>
+                        </td>
+                        <td>
+                            Port mdapi away from pkgdb
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/63"> pagure.io/mdapi/63</a>
+                        </td>
+                        <td>
+                            F27 is missing in mdapi
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            kparal
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/59"> pagure.io/mdapi/59</a>
+                        </td>
+                        <td>
+                            The srcpkg API appears to be broken
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            jcline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/56"> pagure.io/mdapi/56</a>
+                        </td>
+                        <td>
+                            Add upstream project URL in the data returned
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/55"> pagure.io/mdapi/55</a>
+                        </td>
+                        <td>
+                            /branches endpoint is broken
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            vondruch
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/mdapi/issue/46"> pagure.io/mdapi/46</a>
+                        </td>
+                        <td>
+                            The instructions to setup the dev environment are wrong
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            till
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/105"> pagure.io/pagure-dist-git/105</a>
+                        </td>
+                        <td>
+                            cvsadmin member should be able to edit bugzilla overrides
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            churchyard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/99"> pagure.io/pagure-dist-git/99</a>
+                        </td>
+                        <td>
+                            &#34;Take&#34; button (to unorphan packages) does not work if the page is not fully loaded
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            ktdreyer
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/98"> pagure.io/pagure-dist-git/98</a>
+                        </td>
+                        <td>
+                            Make the Issue link point to bugzilla
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/97"> pagure.io/pagure-dist-git/97</a>
+                        </td>
+                        <td>
+                            Hide the SSH URL if the user is not in the packager group
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/89"> pagure.io/pagure-dist-git/89</a>
+                        </td>
+                        <td>
+                            rust-askalono-cli bodhi integration does not show packages.
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ignatenkobrain
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/85"> pagure.io/pagure-dist-git/85</a>
+                        </td>
+                        <td>
+                            Version overview on src.fp.o shows bogus package
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            thofmann
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/84"> pagure.io/pagure-dist-git/84</a>
+                        </td>
+                        <td>
+                            pull request merging is declined on pr_only repos
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jlanda
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/79"> pagure.io/pagure-dist-git/79</a>
+                        </td>
+                        <td>
+                            Provide feedback when monitoring status changed successfully 
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            pingou
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/65"> pagure.io/pagure-dist-git/65</a>
+                        </td>
+                        <td>
+                            Pagure is sending fedmsgs about merging on master whenever people view PRs
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            bowlofeggs
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/60"> pagure.io/pagure-dist-git/60</a>
+                        </td>
+                        <td>
+                            Wrong upstream link
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            vondruch
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/55"> pagure.io/pagure-dist-git/55</a>
+                        </td>
+                        <td>
+                            Orhpan should not have &#34;ticket&#34; rights if project has owner
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            vondruch
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/54"> pagure.io/pagure-dist-git/54</a>
+                        </td>
+                        <td>
+                            Orphaning package results in error 503
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            vondruch
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/pagure-dist-git/issue/44"> pagure.io/pagure-dist-git/44</a>
+                        </td>
+                        <td>
+                            SSH source git URL is incorrect for forked repositories
+                        </td>
+                        <td>
+                            Pierre-YvesChibon
+                        </td>
+                        <td>
+                            jflory7
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/28"> pagure.io/robosignatory/28</a>
+                        </td>
+                        <td>
+                            CI Gating: Robosignatory should sign Koji builds from side-tags
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nphilipp
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/19"> pagure.io/robosignatory/19</a>
+                        </td>
+                        <td>
+                            add ability for robosig to make recursive directories when updating ostree ref
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dustymabe
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://pagure.io/robosignatory/issue/18"> pagure.io/robosignatory/18</a>
+                        </td>
+                        <td>
+                            Rethink how to sign modules.
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ralph
                         </td>
                     </tr>
                 
@@ -1739,21 +3821,1311 @@
                         </td>
                     </tr>
                 
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/909"> github/fedora-infra/anitya/909</a>
+                        </td>
+                        <td>
+                            Bump pytest from 5.4.1 to 5.4.2
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dependabot-preview[bot]
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/908"> github/fedora-infra/anitya/908</a>
+                        </td>
+                        <td>
+                            Bump semver from 2.9.1 to 2.10.0
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dependabot-preview[bot]
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/906"> github/fedora-infra/anitya/906</a>
+                        </td>
+                        <td>
+                            Add properties methods to schema
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/905"> github/fedora-infra/anitya/905</a>
+                        </td>
+                        <td>
+                            Update dependabot config
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/904"> github/fedora-infra/anitya/904</a>
+                        </td>
+                        <td>
+                            Bump arrow from 0.15.5 to 0.15.6
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dependabot-preview[bot]
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/903"> github/fedora-infra/anitya/903</a>
+                        </td>
+                        <td>
+                            Freeze dependencies for Anitya
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/902"> github/fedora-infra/anitya/902</a>
+                        </td>
+                        <td>
+                            Fix documentation build
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/900"> github/fedora-infra/anitya/900</a>
+                        </td>
+                        <td>
+                            Flush mii-diag versions
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            tpetazzoni
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/897"> github/fedora-infra/anitya/897</a>
+                        </td>
+                        <td>
+                            Issue with selinux project indexing
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            tpetazzoni
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/896"> github/fedora-infra/anitya/896</a>
+                        </td>
+                        <td>
+                            release-monitoring.org is not working
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dharanlinux
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/895"> github/fedora-infra/anitya/895</a>
+                        </td>
+                        <td>
+                            GitHub backend: do not raise error if no new upstream version
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            olivierlemasle
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/892"> github/fedora-infra/anitya/892</a>
+                        </td>
+                        <td>
+                            No upstream version found doesn&#39;t mean there is error in project check
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/890"> github/fedora-infra/anitya/890</a>
+                        </td>
+                        <td>
+                            Allow removing mapping
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            tpetazzoni
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/887"> github/fedora-infra/anitya/887</a>
+                        </td>
+                        <td>
+                            Move Anitya to fedora-infra organization
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/886"> github/fedora-infra/anitya/886</a>
+                        </td>
+                        <td>
+                            Add project information to backend blacklisted message
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/884"> github/fedora-infra/anitya/884</a>
+                        </td>
+                        <td>
+                            Fix accessing projects in GitLab subgroups
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nphilipp
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/883"> github/fedora-infra/anitya/883</a>
+                        </td>
+                        <td>
+                            Fix search for projects by distro
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/pull/882"> github/fedora-infra/anitya/882</a>
+                        </td>
+                        <td>
+                            Use mapping as another condition for deletion
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/anitya/issues/881"> github/fedora-infra/anitya/881</a>
+                        </td>
+                        <td>
+                            Libraries.io consumer is creating junk PyPi projects
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            yarons
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/287"> github/fedora-infra/the-new-hotness/287</a>
+                        </td>
+                        <td>
+                            Freeze versions of dependencies
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/285"> github/fedora-infra/the-new-hotness/285</a>
+                        </td>
+                        <td>
+                            Refactor config to use centralized defaults
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/283"> github/fedora-infra/the-new-hotness/283</a>
+                        </td>
+                        <td>
+                            Add PyUp to the-new-hotness
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/282"> github/fedora-infra/the-new-hotness/282</a>
+                        </td>
+                        <td>
+                            Fix PR number
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/281"> github/fedora-infra/the-new-hotness/281</a>
+                        </td>
+                        <td>
+                            Clean and raise coverage for Anitya module
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/280"> github/fedora-infra/the-new-hotness/280</a>
+                        </td>
+                        <td>
+                            Removed unused functions
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/279"> github/fedora-infra/the-new-hotness/279</a>
+                        </td>
+                        <td>
+                            Update helpers.get_html to work with Python 3
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nielsenb-jf
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/278"> github/fedora-infra/the-new-hotness/278</a>
+                        </td>
+                        <td>
+                            Add custom pipeline for CentOS CI
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/275"> github/fedora-infra/the-new-hotness/275</a>
+                        </td>
+                        <td>
+                            Fixes and tests for helpers.secure_download
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nielsenb-jf
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/274"> github/fedora-infra/the-new-hotness/274</a>
+                        </td>
+                        <td>
+                            Add the-new-hotness design document
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/273"> github/fedora-infra/the-new-hotness/273</a>
+                        </td>
+                        <td>
+                            Fix failing tests
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/272"> github/fedora-infra/the-new-hotness/272</a>
+                        </td>
+                        <td>
+                            Drop python 3.5 support
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/271"> github/fedora-infra/the-new-hotness/271</a>
+                        </td>
+                        <td>
+                            Add expand_subdirs test
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nielsenb-jf
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/270"> github/fedora-infra/the-new-hotness/270</a>
+                        </td>
+                        <td>
+                            Removed unused functions
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            pgporada
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/268"> github/fedora-infra/the-new-hotness/268</a>
+                        </td>
+                        <td>
+                            Add tests for match_interval
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nielsenb-jf
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/267"> github/fedora-infra/the-new-hotness/267</a>
+                        </td>
+                        <td>
+                            Increase test coverage of helpers.py
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            nielsenb-jf
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/266"> github/fedora-infra/the-new-hotness/266</a>
+                        </td>
+                        <td>
+                            Fix rtd build
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            stsewd
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/265"> github/fedora-infra/the-new-hotness/265</a>
+                        </td>
+                        <td>
+                            Use autodoc_mock_imports
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/issues/264"> github/fedora-infra/the-new-hotness/264</a>
+                        </td>
+                        <td>
+                            Fix ReadTheDocs build
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/263"> github/fedora-infra/the-new-hotness/263</a>
+                        </td>
+                        <td>
+                            Mock rpm-py-installer
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/the-new-hotness/pull/262"> github/fedora-infra/the-new-hotness/262</a>
+                        </td>
+                        <td>
+                            Increase test coverage
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dcermak
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/217"> github/fedora-infra/fedora-messaging/217</a>
+                        </td>
+                        <td>
+                            Pytest 5.4 breaks the Twisted tests
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/216"> github/fedora-infra/fedora-messaging/216</a>
+                        </td>
+                        <td>
+                            Fix the docs about exceptions being wrapped by HaltConsumer
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/215"> github/fedora-infra/fedora-messaging/215</a>
+                        </td>
+                        <td>
+                            Documentation states that HaltConsumer is raised when the callback raises an exception
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mprahl
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/214"> github/fedora-infra/fedora-messaging/214</a>
+                        </td>
+                        <td>
+                            Only try to restart fm-consumer@ services every 60 seconds
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            AdamWill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/213"> github/fedora-infra/fedora-messaging/213</a>
+                        </td>
+                        <td>
+                            Fix handling of new connections after a publish timeout
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/212"> github/fedora-infra/fedora-messaging/212</a>
+                        </td>
+                        <td>
+                            AttributeError: &#39;NoneType&#39; object has no attribute &#39;publish&#39;
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                        <td>
+                            Zlopez
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/211"> github/fedora-infra/fedora-messaging/211</a>
+                        </td>
+                        <td>
+                            Version 2.0.0
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/210"> github/fedora-infra/fedora-messaging/210</a>
+                        </td>
+                        <td>
+                            Handle ConnectionLost errors in the on_ready errbacks
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/209"> github/fedora-infra/fedora-messaging/209</a>
+                        </td>
+                        <td>
+                            Fix a reconnection issue
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/issues/208"> github/fedora-infra/fedora-messaging/208</a>
+                        </td>
+                        <td>
+                            Consumer does not receive or process messages after automatic reconnect when connection lost
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                        <td>
+                            AdamWill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/207"> github/fedora-infra/fedora-messaging/207</a>
+                        </td>
+                        <td>
+                            V1.7
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            prompty001
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/205"> github/fedora-infra/fedora-messaging/205</a>
+                        </td>
+                        <td>
+                            Remove redundant function from sample schema package
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            dvejmz
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/204"> github/fedora-infra/fedora-messaging/204</a>
+                        </td>
+                        <td>
+                            Note the addition client properties in the config docs
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/202"> github/fedora-infra/fedora-messaging/202</a>
+                        </td>
+                        <td>
+                            Clarify queues are only deleted if unused
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/201"> github/fedora-infra/fedora-messaging/201</a>
+                        </td>
+                        <td>
+                            wire-format: improve message properties documentaion
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/200"> github/fedora-infra/fedora-messaging/200</a>
+                        </td>
+                        <td>
+                            Twisted legacy logging does not accept format parameters
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/199"> github/fedora-infra/fedora-messaging/199</a>
+                        </td>
+                        <td>
+                            Document the sent-at header in messages
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/198"> github/fedora-infra/fedora-messaging/198</a>
+                        </td>
+                        <td>
+                            Fix exception arguments and documentation
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            hluk
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/197"> github/fedora-infra/fedora-messaging/197</a>
+                        </td>
+                        <td>
+                            Add MANIFEST.in and include tests for sample schema package
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            ShraddhaAg
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/196"> github/fedora-infra/fedora-messaging/196</a>
+                        </td>
+                        <td>
+                            docs: create a quick-start guide
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/194"> github/fedora-infra/fedora-messaging/194</a>
+                        </td>
+                        <td>
+                            Drop the deprecated Twisted APIs
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/193"> github/fedora-infra/fedora-messaging/193</a>
+                        </td>
+                        <td>
+                            Correct queue name in consumer example
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            changlinli
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/192"> github/fedora-infra/fedora-messaging/192</a>
+                        </td>
+                        <td>
+                            Document a quick way to setup logging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/191"> github/fedora-infra/fedora-messaging/191</a>
+                        </td>
+                        <td>
+                            Don&#39;t declare exchanges when consuming
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/189"> github/fedora-infra/fedora-messaging/189</a>
+                        </td>
+                        <td>
+                            Make same example config changes in the staging example
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            AdamWill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedora-messaging/pull/188"> github/fedora-infra/fedora-messaging/188</a>
+                        </td>
+                        <td>
+                            Update example config: ZMQ exchange, extra properties, logging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            AdamWill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/22"> github/fedora-infra/fedmsg-migration-tools/22</a>
+                        </td>
+                        <td>
+                            Log dropped message at debug level because it&#39;s polluting the logs
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/21"> github/fedora-infra/fedmsg-migration-tools/21</a>
+                        </td>
+                        <td>
+                             Set the fedora-message body to the fedmsg &#34;msg&#34; key 
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/20"> github/fedora-infra/fedmsg-migration-tools/20</a>
+                        </td>
+                        <td>
+                            fedmsgs converted to AMQP include the entire fedmsg (not just the `msg`) as `message.body`
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            AdamWill
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/19"> github/fedora-infra/fedmsg-migration-tools/19</a>
+                        </td>
+                        <td>
+                            Drop messages from the AMQP-&gt;ZMQ bridge
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/18"> github/fedora-infra/fedmsg-migration-tools/18</a>
+                        </td>
+                        <td>
+                            Fix Mergify config
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/17"> github/fedora-infra/fedmsg-migration-tools/17</a>
+                        </td>
+                        <td>
+                            Add a rate limiter filter for logging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/16"> github/fedora-infra/fedmsg-migration-tools/16</a>
+                        </td>
+                        <td>
+                            Autodetect signing certificate
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/15"> github/fedora-infra/fedmsg-migration-tools/15</a>
+                        </td>
+                        <td>
+                            bridges are crashing in OpenShift
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/13"> github/fedora-infra/fedmsg-migration-tools/13</a>
+                        </td>
+                        <td>
+                            Support new twisted API
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/12"> github/fedora-infra/fedmsg-migration-tools/12</a>
+                        </td>
+                        <td>
+                            Prepare for running on OpenShift
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/11"> github/fedora-infra/fedmsg-migration-tools/11</a>
+                        </td>
+                        <td>
+                            Release tooling
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/10"> github/fedora-infra/fedmsg-migration-tools/10</a>
+                        </td>
+                        <td>
+                            Systemd and Packaging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/9"> github/fedora-infra/fedmsg-migration-tools/9</a>
+                        </td>
+                        <td>
+                            Wrap messages sent to ZMQ with fedmsg format
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/8"> github/fedora-infra/fedmsg-migration-tools/8</a>
+                        </td>
+                        <td>
+                            Black
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/7"> github/fedora-infra/fedmsg-migration-tools/7</a>
+                        </td>
+                        <td>
+                            Mergify initial configuration
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            mergify[bot]
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/6"> github/fedora-infra/fedmsg-migration-tools/6</a>
+                        </td>
+                        <td>
+                            Twisted
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/5"> github/fedora-infra/fedmsg-migration-tools/5</a>
+                        </td>
+                        <td>
+                            Ensure match in fedmsg format in AMQP-&gt;ZMQ bridge
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/3"> github/fedora-infra/fedmsg-migration-tools/3</a>
+                        </td>
+                        <td>
+                            Systemd integration
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/2"> github/fedora-infra/fedmsg-migration-tools/2</a>
+                        </td>
+                        <td>
+                            Fix up verify_missing config and add validation and signing for bridges
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            jeremycline
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <a href="https://github.com/fedora-infra/fedmsg-migration-tools/pull/1"> github/fedora-infra/fedmsg-migration-tools/1</a>
+                        </td>
+                        <td>
+                            Use fedora-messaging
+                        </td>
+                        <td>
+                            None
+                        </td>
+                        <td>
+                            abompard
+                        </td>
+                    </tr>
+                
                     </tbody>
                     </table>
                 </div>
         </div>
     </div>
-</div>
-<footer class="page-footer font-small blue">
+  </div>
+  <footer class="page-footer font-small blue">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">Generated by
       <a href="https://github.com/fedora-infra/tbs"> TBS</a>
     </div>
     <!-- Copyright -->
-  
-  </footer> 
+
+  </footer>
 </div>
 </body>
 </html>
