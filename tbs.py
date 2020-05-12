@@ -17,21 +17,15 @@
 
 import argparse
 import datetime
-import json
 import logging
 import os
-import re
 import toml
+import urllib
 
-try:
-    from urllib2 import urlopen
-except:
-    from urllib.request import urlopen
+import requests
+
 from bugzilla.rhbugzilla import RHBugzilla
-
-# Let's import template stuff
 from jinja2 import Template
-import mwclient
 
 __version__ = "0.2.1"
 bzclient = RHBugzilla(
@@ -45,7 +39,7 @@ logger = logging.getLogger("bugzilla")
 RETRIES = 2
 
 
-class Project(object):
+class Project:
     """ Simple object representation of a project. """
 
     def __init__(self):
@@ -58,7 +52,7 @@ class Project(object):
         self.tickets = []
 
 
-class Ticket(object):
+class Ticket:
     """ Simple object representation of a ticket. """
 
     def __init__(self):
@@ -147,15 +141,13 @@ def main():
 
     projects = gather_projects()
 
-    labels = ['groomed', 'in-progress', '']
-    states = ['open', 'closed']
     ticket_num = 0
     all_tickets = []
     closed_tickets = []
     state = 'all'
     for project in projects:
-        # print('Project: %s' % project.name)
         tickets = []
+        print(f"Fetching issues for {project.name}")
         if project.service == 'github':
             project.url = "https://github.com/%s/" % (project.name)
             project.site = "github"
@@ -163,9 +155,7 @@ def main():
                     "https://api.github.com/repos/%s/issues"
                     "?state=%s" % (project.name, state)
             )
-            stream = urlopen(url)
-            output = stream.read()
-            jsonobj = json.loads(output)
+            jsonobj = requests.get(url).json()
             if jsonobj and "pull_request" not in jsonobj:
                 for ticket in jsonobj:
                     ticket_num = ticket_num + 1
@@ -199,9 +189,7 @@ def main():
                     "https://pagure.io/api/0/%s/issues"
                     "?status=%s" % (project.name, state.capitalize())
             )
-            stream = urlopen(url)
-            output = stream.read()
-            jsonobj = json.loads(output)
+            jsonobj = requests.get(url).json()
             if jsonobj:
                 for ticket in jsonobj["issues"]:
                     ticket_num = ticket_num + 1
@@ -237,11 +225,9 @@ def main():
             url = (
                     "https://gitlab.com/api/v4/projects/%s/issues"
                     "?state=%s&labels=%s"
-                    % (urllib2.quote(project.name, safe=""), state, label)
+                    % (urllib.parse.quote(project.name, safe=""), state, label)
             )
-            stream = urlopen(url)
-            output = stream.read()
-            jsonobj = json.loads(output)
+            jsonobj = requests.get(url).json()
             if jsonobj:
                 for ticket in jsonobj:
                     ticket_num = ticket_num + 1
@@ -263,9 +249,9 @@ def main():
                     all_tickets.append(ticketobj)
         elif project.service == "bugzilla":
             project.tag = "bugzillaTag"
-            # https://docs.gitlab.com/ee/api/issues.html#list-project-issues
-            project.url = "https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora" % (
-                project.name)
+            project.url = "https://bugzilla.redhat.com/buglist.cgi"\
+                          "?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora"\
+                          % (project.name)
             project.site = "bugzilla.redhat.com"
             bz_list = bzclient.query(
                 {
@@ -333,6 +319,7 @@ def main():
 
     except IOError as err:
         print("ERROR: %s" % err)
+
 
 if __name__ == "__main__":
     main()
