@@ -300,10 +300,11 @@ def main():
     tickets_in_progress = []
     tickets_untaged = []
     for ticket in all_tickets:
+        if ticket.assignee:
+            tickets_in_progress.append(ticket)
+            continue
         for label in ticket.labels:
-            if label == "in-progress":
-                tickets_in_progress.append(ticket)
-            elif label == "groomed":
+            if label == "groomed":
                 tickets_groomed.append(ticket)
             else:
                 tickets_untaged.append(ticket)
