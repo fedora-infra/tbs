@@ -10,7 +10,6 @@
 
 
 [projects.github.'fedora-infra/bodhi']
-[projects.github.'fedora-infra/noggin']
 [projects.github.'fedora-infra/anitya']
 [projects.github.'fedora-infra/the-new-hotness']
 [projects.github.'fedora-infra/fedora-messaging']
