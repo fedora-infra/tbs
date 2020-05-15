@@ -101,7 +101,7 @@ def main():
     ticket_num = 0
     all_tickets = []
     closed_tickets = []
-    state = 'all'
+    state = 'open'
     for project in projects:
         tickets = []
         print(f"Fetching issues for {project.name}")
@@ -110,7 +110,7 @@ def main():
             project.site = "github"
             url = (
                     "https://api.github.com/repos/%s/issues"
-                    "?state=%s" % (project.name, state)
+                    "?state=%s&per_page=100" % (project.name, state)
             )
             jsonobj = requests.get(url).json()
             if jsonobj and "pull_request" not in jsonobj:
@@ -132,7 +132,7 @@ def main():
                     else:
                         ticketobj.assignee = None
 
-                    if ticket["closed_at"]:
+                    if ticket["state"] == "closed":
                         closed_tickets.append(ticketobj)
                     else:
                         all_tickets.append(ticketobj)
@@ -143,7 +143,7 @@ def main():
             project.site = "pagure.io"
             url = (
                     "https://pagure.io/api/0/%s/issues"
-                    "?status=%s" % (project.name, state.capitalize())
+                    "?status=%s&per_page=100" % (project.name, state.capitalize())
             )
             jsonobj = requests.get(url).json()
             if jsonobj:
@@ -166,7 +166,7 @@ def main():
                     else:
                         ticketobj.assignee = None
 
-                    if ticket["closed_at"]:
+                    if ticket["status"] == "Closed":
                         closed_tickets.append(ticketobj)
                     else:
                         all_tickets.append(ticketobj)
