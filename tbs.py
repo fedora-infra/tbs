@@ -234,10 +234,14 @@ def main():
 
     tickets_groomed = []
     tickets_in_progress = []
+    tickets_blocked = []
     tickets_untaged = []
     for ticket in all_tickets:
         if ticket.assignee:
-            tickets_in_progress.append(ticket)
+            if "blocked" in ticket.labels:
+                tickets_blocked.append(ticket)
+            else:
+                tickets_in_progress.append(ticket)
             continue
         for label in ticket.labels:
             if label == "groomed":
@@ -257,6 +261,7 @@ def main():
             all_tickets=all_tickets,
             tickets_groomed=tickets_groomed,
             tickets_in_progress=tickets_in_progress,
+            tickets_blocked=tickets_blocked,
             tickets_untaged=tickets_untaged,
             closed_tickets=closed_tickets,
             date=datetime.datetime.now().strftime("%a %b %d %Y %H:%M"),
