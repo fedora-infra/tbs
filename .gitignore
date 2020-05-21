@@ -4,4 +4,5 @@ dist/
 MANIFEST
 *.pyc
 venv/
+.venv/
 .idea/
