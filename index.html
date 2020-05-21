@@ -9,12 +9,20 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('#in_progress_tickets').DataTable();
+        $('#groomed_tickets').DataTable();
+        $('#all_tickets').DataTable();
+    });
+  </script>
   <div class="fluid-container">
     <div>
         <h1>CPE Dashboard</h1>
         <p> Total: 492 tickets found </p>
-        <p>Last update: Thu May 21 2020 13:06</p>
+        <p>Last update: Thu May 21 2020 14:05</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#planning">Planning</a></li>
             <li><a data-toggle="tab" href="#open">Open tickets</a></li>
@@ -26,7 +34,7 @@
         <div id="planning" class="row tab-pane fade in active">
             <div id="in_progress_tickets_table" class="col-xs-12">
                 <p><h4>In-progress tickets</h4></p>
-                <table class="table table-striped table-bordered table-centered">
+                <table id="in_progress_tickets" class="table table-striped table-bordered table-centered">
                     <thead>
                         <tr>
                             <th>Ticket link</th>
@@ -954,21 +962,6 @@
             
                 <tr>
                     <td>
-                        <a href="https://github.com/fedora-infra/bodhi/issues/4018"> github/fedora-infra/bodhi/4018</a>
-                    </td>
-                    <td>
-                        Add a graphql endpoint to bodhi
-                    </td>
-                    <td>
-                        karmadolkar
-                    </td>
-                    <td>
-                        cverna
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>
                         <a href="https://github.com/fedora-infra/bodhi/issues/3991"> github/fedora-infra/bodhi/3991</a>
                     </td>
                     <td>
@@ -1089,6 +1082,21 @@
             
                 <tr>
                     <td>
+                        <a href="https://github.com/fedora-infra/bodhi/issues/3061"> github/fedora-infra/bodhi/3061</a>
+                    </td>
+                    <td>
+                        [L] - Koji calls should be moved to a backend task worker
+                    </td>
+                    <td>
+                        nphilipp
+                    </td>
+                    <td>
+                        bowlofeggs
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
                         <a href="https://github.com/fedora-infra/anitya/issues/332"> github/fedora-infra/anitya/332</a>
                     </td>
                     <td>
@@ -1197,7 +1205,7 @@
             </div>
             <div id="groomed_tickets_table" class="col-xs-12">
                 <p><h4>Groomed tickets</h4></p>
-                <table class="table table-striped table-bordered table-centered">
+                <table id="groomed_tickets" class="table table-striped table-bordered table-centered">
                     <thead>
                         <tr>
                             <th>Ticket link</th>
@@ -1365,7 +1373,7 @@
             <div id="open" class="row tab-pane fade">
                 <div id="all_tickets_table" class="col-xs-12">
                     <p><h4>All tickets</h4></p>
-                        <table class="table table-striped table-bordered table-centered">
+                        <table id="all_tickets" class="table table-striped table-bordered table-centered">
                             <thead>
                                 <tr>
                                     <th>Ticket link</th>
@@ -5053,21 +5061,6 @@
                     
                         <tr>
                             <td>
-                                <a href="https://github.com/fedora-infra/bodhi/pull/4023"> github/fedora-infra/bodhi/4023</a>
-                            </td>
-                            <td>
-                                Add a graphql endpoint to Bodhi
-                            </td>
-                            <td>
-                                None
-                            </td>
-                            <td>
-                                karmadolkar
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
                                 <a href="https://github.com/fedora-infra/bodhi/issues/4020"> github/fedora-infra/bodhi/4020</a>
                             </td>
                             <td>
@@ -5093,21 +5086,6 @@
                             </td>
                             <td>
                                 onosek
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <a href="https://github.com/fedora-infra/bodhi/issues/4018"> github/fedora-infra/bodhi/4018</a>
-                            </td>
-                            <td>
-                                Add a graphql endpoint to bodhi
-                            </td>
-                            <td>
-                                karmadolkar
-                            </td>
-                            <td>
-                                cverna
                             </td>
                         </tr>
                     
@@ -6452,6 +6430,36 @@
                             </td>
                             <td>
                                 Analyze Bodhi&#39;s queries to look for opportunities to add indices
+                            </td>
+                            <td>
+                                None
+                            </td>
+                            <td>
+                                bowlofeggs
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="https://github.com/fedora-infra/bodhi/issues/3061"> github/fedora-infra/bodhi/3061</a>
+                            </td>
+                            <td>
+                                [L] - Koji calls should be moved to a backend task worker
+                            </td>
+                            <td>
+                                nphilipp
+                            </td>
+                            <td>
+                                bowlofeggs
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="https://github.com/fedora-infra/bodhi/issues/3053"> github/fedora-infra/bodhi/3053</a>
+                            </td>
+                            <td>
+                                [M] Give Bodhi a feature flag to be able to make test gating decisions/waivers using ResultsDB directly
                             </td>
                             <td>
                                 None

@@ -9,7 +9,15 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('#in_progress_tickets').DataTable();
+        $('#groomed_tickets').DataTable();
+        $('#all_tickets').DataTable();
+    });
+  </script>
   <div class="fluid-container">
     <div>
         <h1>CPE Dashboard</h1>
@@ -26,7 +34,7 @@
         <div id="planning" class="row tab-pane fade in active">
             <div id="in_progress_tickets_table" class="col-xs-12">
                 <p><h4>In-progress tickets</h4></p>
-                <table class="table table-striped table-bordered table-centered">
+                <table id="in_progress_tickets" class="table table-striped table-bordered table-centered">
                     <thead>
                         <tr>
                             <th>Ticket link</th>
@@ -57,7 +65,7 @@
             </div>
             <div id="groomed_tickets_table" class="col-xs-12">
                 <p><h4>Groomed tickets</h4></p>
-                <table class="table table-striped table-bordered table-centered">
+                <table id="groomed_tickets" class="table table-striped table-bordered table-centered">
                     <thead>
                         <tr>
                             <th>Ticket link</th>
@@ -90,7 +98,7 @@
             <div id="open" class="row tab-pane fade">
                 <div id="all_tickets_table" class="col-xs-12">
                     <p><h4>All tickets</h4></p>
-                        <table class="table table-striped table-bordered table-centered">
+                        <table id="all_tickets" class="table table-striped table-bordered table-centered">
                             <thead>
                                 <tr>
                                     <th>Ticket link</th>
