@@ -15,14 +15,15 @@
     $(document).ready(function () {
         $('#in_progress_tickets').DataTable();
         $('#groomed_tickets').DataTable();
+        $('#blocked_tickets').DataTable();
         $('#all_tickets').DataTable();
     });
   </script>
   <div class="fluid-container">
     <div>
         <h1>CPE Dashboard</h1>
-        <p> Total: 496 tickets found </p>
-        <p>Last update: Tue May 26 2020 07:09</p>
+        <p> Total: 497 tickets found </p>
+        <p>Last update: Tue May 26 2020 08:10</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#planning">Planning</a></li>
             <li><a data-toggle="tab" href="#open">Open tickets</a></li>
@@ -252,21 +253,6 @@
                     </td>
                     <td>
                         zbyszek
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>
-                        <a href="https://pagure.io/releng/issue/8400"> pagure.io/releng/8400</a>
-                    </td>
-                    <td>
-                        Deploy sigul 1.x
-                    </td>
-                    <td>
-                        Patrick &#34;パトリック&#34; Uiterwijk
-                    </td>
-                    <td>
-                        mohanboddu
                     </td>
                 </tr>
             
@@ -1187,21 +1173,6 @@
             
                 <tr>
                     <td>
-                        <a href="https://github.com/fedora-infra/the-new-hotness/issues/189"> github/fedora-infra/the-new-hotness/189</a>
-                    </td>
-                    <td>
-                        File pull requests instead of attaching patches to Bugzilla
-                    </td>
-                    <td>
-                        Zlopez
-                    </td>
-                    <td>
-                        danc86
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>
                         <a href="https://github.com/fedora-infra/fedmsg-migration-tools/issues/4"> github/fedora-infra/fedmsg-migration-tools/4</a>
                     </td>
                     <td>
@@ -1348,6 +1319,21 @@
                     </td>
                     <td>
                         ankursinha
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/fedora-infrastructure/issue/8904"> pagure.io/fedora-infrastructure/8904</a>
+                    </td>
+                    <td>
+                        Please provide copr frontend/keygen backups from 2020-05-08
+                    </td>
+                    <td>
+                        None
+                    </td>
+                    <td>
+                        praiskup
                     </td>
                 </tr>
             
@@ -1633,6 +1619,52 @@
                     </td>
                     <td>
                         Zlopez
+                    </td>
+                </tr>
+            
+                </tbody>
+                </table>
+            </div>
+            <div id="blocked_tickets_table" class="col-xs-12">
+                <p><h4>Blocked tickets</h4></p>
+                <table id="blocked_tickets" class="table table-striped table-bordered table-centered">
+                    <thead>
+                        <tr>
+                            <th>Ticket link</th>
+                            <th>Ticket info</th>
+                            <th>Assignee</th>
+                            <th>Requester</th>
+                        </tr>
+                    </thead>
+                <tbody>
+            
+                <tr>
+                    <td>
+                        <a href="https://pagure.io/releng/issue/8400"> pagure.io/releng/8400</a>
+                    </td>
+                    <td>
+                        Deploy sigul 1.x
+                    </td>
+                    <td>
+                        Patrick &#34;パトリック&#34; Uiterwijk
+                    </td>
+                    <td>
+                        mohanboddu
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <a href="https://github.com/fedora-infra/the-new-hotness/issues/189"> github/fedora-infra/the-new-hotness/189</a>
+                    </td>
+                    <td>
+                        File pull requests instead of attaching patches to Bugzilla
+                    </td>
+                    <td>
+                        Zlopez
+                    </td>
+                    <td>
+                        danc86
                     </td>
                 </tr>
             
@@ -3316,6 +3348,21 @@
                             </td>
                             <td>
                                 ankursinha
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>
+                                <a href="https://pagure.io/fedora-infrastructure/issue/8904"> pagure.io/fedora-infrastructure/8904</a>
+                            </td>
+                            <td>
+                                Please provide copr frontend/keygen backups from 2020-05-08
+                            </td>
+                            <td>
+                                None
+                            </td>
+                            <td>
+                                praiskup
                             </td>
                         </tr>
                     
