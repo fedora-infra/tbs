@@ -33,6 +33,8 @@ bzclient = RHBugzilla(
 # So the bugzilla module has some way to complain
 logging.basicConfig()
 logger = logging.getLogger("bugzilla")
+
+
 # logger.setLevel(logging.DEBUG)
 
 
@@ -61,6 +63,7 @@ class Ticket:
         self.project = ""
         self.project_site = ""
         self.closed_by = ""
+        self.last_update = ""
         self.tag = ""
 
 
@@ -110,6 +113,8 @@ def gather_pagure_tickets(project, all_tickets, state):
             else:
                 ticketobj.assignee = None
 
+            ticketobj.last_update = (datetime.datetime.now() - \
+                                    datetime.datetime.utcfromtimestamp(int(ticket["last_updated"]))).days
             all_tickets.append(ticketobj)
 
 
@@ -140,6 +145,8 @@ def gather_github_tickets(project, all_tickets, state):
             else:
                 ticketobj.assignee = None
 
+            ticketobj.last_update = (datetime.datetime.now(datetime.timezone.utc) - \
+                                    datetime.datetime.fromisoformat(ticket["updated_at"].replace("Z", "+00:00"))).days
             all_tickets.append(ticketobj)
 
 
@@ -169,14 +176,16 @@ def gather_gitlab_tickets(project, all_tickets, state):
             else:
                 ticketobj.assignee = None
 
+            ticketobj.last_update = (datetime.datetime.now((datetime.timezone.utc)) - \
+                                    datetime.datetime.fromisoformat(ticket["updated_at"].replace("Z", "+00:00"))).days
             all_tickets.append(ticketobj)
 
 
 def gather_bugzilla_tickets(project, all_tickets):
     """"Get the bugzilla tickets for a component"""
     project.tag = "bugzillaTag"
-    project.url = "https://bugzilla.redhat.com/buglist.cgi"\
-                  "?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora"\
+    project.url = "https://bugzilla.redhat.com/buglist.cgi" \
+                  "?bug_status=NEW&bug_status=ASSIGNED&component=%s&product=Fedora" \
                   % (project.name)
     project.site = "bugzilla.redhat.com"
     bz_list = bzclient.query(
@@ -202,6 +211,9 @@ def gather_bugzilla_tickets(project, all_tickets):
         ticketobj.assignee = ticket.assigned_to
     else:
         ticketobj.assignee = None
+
+    ticketobj.last_update = (datetime.datetime.now() - \
+                            datetime.datetime.strptime(str(ticket.last_change_time), '%Y%m%dT%H:%M:%S')).days
     all_tickets.append(ticketobj)
 
 
