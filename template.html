@@ -42,6 +42,7 @@
                             <th>Ticket info</th>
                             <th>Assignee</th>
                             <th>Requester</th>
+                            <th>Update status</th>
                         </tr>
                     </thead>
                 <tbody>
@@ -58,6 +59,9 @@
                     </td>
                     <td>
                         {{ ticket.requester|e }}
+                    </td>
+                    <td>
+                        Updated {{ ticket.last_update|e }} days ago
                     </td>
                 </tr>
             {% endfor %}
@@ -90,6 +94,9 @@
                     <td>
                         {{ ticket.requester|e }}
                     </td>
+                    <td>
+                        Updated {{ ticket.last_update|e }} days ago
+                    </td>
                 </tr>
             {% endfor %}
                 </tbody>
@@ -120,6 +127,9 @@
                     </td>
                     <td>
                         {{ ticket.requester|e }}
+                    </td>
+                    <td>
+                        Updated {{ ticket.last_update|e }} days ago
                     </td>
                 </tr>
             {% endfor %}
@@ -154,6 +164,9 @@
                             <td>
                                 {{ ticket.requester|e }}
                             </td>
+                            <td>
+                                Updated {{ ticket.last_update|e }} days ago
+                            </td>
                         </tr>
                     {% endfor %}
                         </tbody>
@@ -186,6 +199,9 @@
                         </td>
                         <td>
                             {{ ticket.requester|e }}
+                        </td>
+                        <td>
+                            Updated {{ ticket.last_update|e }} days ago
                         </td>
                     </tr>
                 {% endfor %}
